@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>YourName — Cafe Landing Pages</title>
+  <meta name="description" content="I design & build cafe landing pages (Figma → HTML) — 48h delivery." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <h1>I build cafe landing pages that get bookings</h1>
+      <p>Figma → pixel-perfect HTML/CSS → Netlify deploy. Fast, affordable, mobile-first.</p>
+      <a class="btn" href="#projects">See demo</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="services">
+      <h2>Services & Prices</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Basic</h3>
+          <p>1-page responsive site • 48h • US 25$</p>
+        </div>
+        <div class="card">
+          <h3>Standard</h3>
+          <p>Figma design + build • 72h • US 50$</p>
+        </div>
+        <div class="card">
+          <h3>Premium</h3>
+          <p>3 sections + 1 month support • US 90$</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Featured Project — Cafe Demo</h2>
+      <p>A simple landing to increase bookings and show the menu.</p>
+      <a class="demo-btn" href="#" target="_blank" rel="noopener">Open Live Demo</a>
+      <p class="small">(This demo is a portfolio sample — I can make one tailored to your cafe.)</p>
+    </section>
+
+    <section id="prompts">
+      <h2>Prompt Packs (Free add-on)</h2>
+      <p>10 ready-to-post social captions and 3 ad headlines included with site orders.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:umerdesigns@hotmail.com">umerdesigns@hotmail.com</a></p>
+      <p>WhatsApp: <a href="https://wa.me/923490806902" target="_blank" rel="noopener">Chat on WhatsApp</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Umer Designs — Front-end + UI/UX</p>
+  </footer>
+
+  <script>
+    // small script
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
