@@ -3,7 +3,12 @@
     --pad:18px;
     font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   }
-  *{box-sizing:border-box}
+.hero{position:relative;background-size:cover;background-position:center;min-height:52vh;display:flex;align-items:center}
+.hero .overlay{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.18));}
+.hero-content{position:relative;color:#fff;text-align:center;padding:36px}
+.hero-content h1{color:#fff}
+
+*{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:#111;line-height:1.4}
   .wrap{max-width:980px;margin:0 auto;padding:24px}
   .hero{background:linear-gradient(180deg,#fdf6f0,#fff);padding:36px 0;text-align:center}
@@ -22,3 +27,4 @@
     .wrap{padding:16px}
   }
   
+
