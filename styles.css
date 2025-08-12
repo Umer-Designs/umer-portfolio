@@ -1,30 +1,44 @@
-:root{
-    --bg:#ffffff; --muted:#666; --accent:#2b7a78; --card:#f7f7f7;
-    --pad:18px;
-    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  }
-.hero{position:relative;background-size:cover;background-position:center;min-height:52vh;display:flex;align-items:center}
-.hero .overlay{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.18));}
-.hero-content{position:relative;color:#fff;text-align:center;padding:36px}
-.hero-content h1{color:#fff}
+.hero {
+  position: relative;
+  background-image: url('your-image.jpg'); /* put correct path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 52vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 36px 0;
+}
 
-*{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:#111;line-height:1.4}
-  .wrap{max-width:980px;margin:0 auto;padding:24px}
-  .hero{background:linear-gradient(180deg,#fdf6f0,#fff);padding:36px 0;text-align:center}
-  .hero h1{margin:0 0 10px;font-size:clamp(22px,4vw,34px)}
-  .btn,.demo-btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none;margin-top:10px}
-  h2{margin-top:36px}
-  .cards{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-  .card{background:var(--card);padding:14px;border-radius:10px;flex:1;min-width:180px}
-  .small{color:var(--muted);font-size:0.9rem}
-  #contact a{color:var(--accent);text-decoration:none}
-  footer{border-top:1px solid #eee;padding:14px;text-align:center;color:var(--muted);font-size:0.9rem;margin-top:36px}
-  
-  /* responsive */
-  @media (max-width:640px){
-    .cards{flex-direction:column}
-    .wrap{padding:16px}
-  }
-  
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.25));
+}
 
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  padding: 36px;
+  text-shadow: 0 4px 14px rgba(0,0,0,0.45);
+}
+
+.hero-content h1 {
+  margin: 0 0 10px;
+  font-size: clamp(22px, 4vw, 34px);
+  color: #fff;
+}
+
+/* responsive tweak for mobile */
+@media (max-width: 640px) {
+  .hero {
+    min-height: 320px; /* smaller hero height */
+    background-position: center top; /* keeps top visible on small screens */
+  }
+  .hero-content {
+    padding: 20px;
+  }
+}
