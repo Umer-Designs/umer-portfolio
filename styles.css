@@ -2,26 +2,23 @@
   --bg:#ffffff;
   --muted:#666;
   --accent:#2b7a78;
+  --accent-hover:#1e5f5d;
   --card:#f7f7f7;
   --pad:18px;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
-
 *{box-sizing:border-box}
-
 body{
   margin:0;
   background:var(--bg);
   color:#111;
   line-height:1.4
 }
-
 .wrap{
   max-width:980px;
   margin:0 auto;
   padding:24px
 }
-
 /* FIXED HERO SECTION - Mobile Optimized */
 .hero{
   position:relative;
@@ -31,15 +28,12 @@ body{
   min-height:52vh;
   display:flex;
   align-items:center;
-  /* Remove conflicting gradient background */
 }
-
 .hero .overlay{
   position:absolute;
   inset:0;
   background:linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.18));
 }
-
 .hero-content{
   position:relative;
   color:#fff;
@@ -48,32 +42,66 @@ body{
   width:100%;
   z-index:1;
 }
-
 .hero-content h1{
   color:#fff;
   margin:0 0 10px;
   font-size:clamp(22px,4vw,34px);
 }
 
-.btn,.demo-btn{
+/* FIXED BUTTON STYLES - Much more visible */
+.btn, .demo-btn, .cta-btn{
   display:inline-block;
   background:var(--accent);
-  color:#fff;
-  padding:10px 16px;
+  color:#ffffff !important; /* Force white text */
+  padding:12px 24px; /* Better padding */
   border-radius:8px;
-  text-decoration:none;
-  margin-top:10px
+  text-decoration:none !important;
+  margin:8px 4px; /* Better spacing */
+  font-weight:600; /* Bolder text */
+  font-size:16px;
+  border:none;
+  cursor:pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(43, 122, 120, 0.3); /* Subtle shadow */
+  line-height: 1.2;
+  text-align: center;
+  /* Prevent text selection issues */
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Button hover states */
+.btn:hover, .demo-btn:hover, .cta-btn:hover{
+  background:var(--accent-hover);
+  color:#ffffff !important;
+  text-decoration:none !important;
+  transform:translateY(-1px);
+  box-shadow: 0 4px 12px rgba(43, 122, 120, 0.4);
+}
+
+/* Button active/focus states */
+.btn:active, .demo-btn:active, .cta-btn:active,
+.btn:focus, .demo-btn:focus, .cta-btn:focus{
+  background:var(--accent);
+  color:#ffffff !important;
+  text-decoration:none !important;
+  transform:translateY(0);
+  outline:2px solid rgba(43, 122, 120, 0.5);
+  outline-offset:2px;
+}
+
+/* Visited link state */
+.btn:visited, .demo-btn:visited, .cta-btn:visited{
+  color:#ffffff !important;
 }
 
 h2{margin-top:36px}
-
 .cards{
   display:flex;
   gap:12px;
   flex-wrap:wrap;
   margin-top:12px
 }
-
 .card{
   background:var(--card);
   padding:14px;
@@ -81,15 +109,21 @@ h2{margin-top:36px}
   flex:1;
   min-width:180px
 }
-
 .small{
   color:var(--muted);
   font-size:0.9rem
 }
-
 #contact a{
   color:var(--accent);
   text-decoration:none
+}
+
+/* Make sure contact section buttons are also visible */
+#contact .cta-btn{
+  color:#ffffff !important;
+  font-weight:700;
+  font-size:18px;
+  padding:14px 28px;
 }
 
 footer{
@@ -100,7 +134,6 @@ footer{
   font-size:0.9rem;
   margin-top:36px
 }
-
 /* RESPONSIVE - Enhanced Mobile Support */
 @media (max-width:640px){
   .cards{flex-direction:column}
@@ -108,26 +141,40 @@ footer{
   
   /* Mobile-specific hero fixes */
   .hero{
-    min-height:45vh; /* Slightly shorter on mobile */
-    background-attachment:scroll; /* Fix for iOS background-attachment issues */
+    min-height:45vh;
+    background-attachment:scroll;
   }
   
   .hero-content{
-    padding:24px 16px; /* More mobile-friendly padding */
+    padding:24px 16px;
   }
   
   .hero-content h1{
-    font-size:clamp(20px,6vw,28px); /* Better mobile scaling */
+    font-size:clamp(20px,6vw,28px);
+  }
+  
+  /* Mobile button improvements */
+  .btn, .demo-btn, .cta-btn{
+    display:block;
+    margin:10px auto;
+    padding:14px 20px;
+    font-size:16px;
+    max-width:280px;
+    width:auto;
   }
 }
-
 /* Additional mobile optimizations */
 @media (max-width:480px){
   .hero{
-    min-height:40vh; /* Even more compact on small screens */
+    min-height:40vh;
   }
   
   .hero-content{
     padding:20px 12px;
+  }
+  
+  .btn, .demo-btn, .cta-btn{
+    padding:12px 18px;
+    font-size:15px;
   }
 }
